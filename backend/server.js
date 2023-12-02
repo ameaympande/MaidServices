@@ -1,25 +1,40 @@
-require('dotenv').config();
 const express = require("express");
-const bcrypt = require('bcrypt');
-const cors = require("cors");
 const mongoose = require("mongoose");
-const app = express();
+const cors = require("cors");
+require("dotenv").config();
 
-const PORT = process.env.PORT;
-const SECRET_KEY = process.env.SECRET_KEY;
-const MONGO_URL = process.env.MONGO_URL;
+const app = express();
+const port = 3000;
+const mongoUrl = process.env.MONGO_URL;
+
+// All routes
+const authRoutes = require("./routes/authRoutes")
+const userRoutes = require("./routes/User")
 
 app.use(express.json());
-const corsOptions = {
-    origin : "*",
-    methods : ["GET" , "POST"],
-    allowHeaders : ["Content-Type"],
-}
+const corsOpts = {
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOpts));
 
-app.use(cors(corsOptions));
+mongoose.set("strictQuery", false);
+mongoose
+  .connect(mongoUrl)
+  .then(() => {
+    console.log("connected to MongoDB");
 
-app.listen(PORT , ()=>{
-    console.log(`Server is runnung on port ${PORT}`)
-})
+  
+    app.use("/",authRoutes );
+    app.use("/", userRoutes );
 
+   
 
+    app.listen(port, () => {
+      console.log(`Server is listening on port ${port}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
