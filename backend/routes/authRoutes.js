@@ -10,22 +10,28 @@ const secretKey = process.env.SECRET_KEY;
 
 router.post("/login", async (req, res) => {
   try {
-    const { email , password} = req.body;
+    const { email, password } = req.body;
 
-    if(!email || !password) return res.status(400).json({message : "Email or password is required."})
+    if (!email || !password)
+      return res
+        .status(400)
+        .json({ message: "Email or password is required." });
 
-    const user = await User.findOne({ email});
+    const user = await User.findOne({ email });
 
-    if(!user) return res.status(401).json({message : "Invalid credentials."})
+    if (!user) return res.status(401).json({ message: "Invalid credentials." });
 
-    const isPasswordMatch = await bcrypt.compare(password , user.password);
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
 
-    if(!isPasswordMatch)return res.status(401).json({message : "Invalid credentials."})
+    if (!isPasswordMatch)
+      return res.status(401).json({ message: "Invalid credentials." });
 
-    const token = jwt.sign({userId : user._id , username : user.username},secretKey);
+    const token = jwt.sign(
+      { userId: user._id, username: user.username },
+      secretKey
+    );
 
-    return res.status(200).json({message : "Login success",Token : token});
-
+    return res.status(200).json({ message: "Login success", Token: token });
   } catch (error) {
     console.log(err);
     return res.status(500).json({ message: "Internal server error" });
@@ -34,19 +40,16 @@ router.post("/login", async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !email || !password) {
+    if (!email || !password) {
       const missingFields = [];
-      if (!username) missingFields.push("Username");
       if (!email) missingFields.push("Email");
       if (!password) missingFields.push("Password");
 
-      return res
-        .status(400)
-        .json({
-          message: `Missing required fields: ${missingFields.join(", ")}.`,
-        });
+      return res.status(400).json({
+        message: `Missing required fields: ${missingFields.join(", ")}.`,
+      });
     }
 
     const isEmailVerify = isValidEmail(email);
@@ -63,7 +66,6 @@ router.post("/signup", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
-      username,
       email,
       password: hashedPassword,
     });
