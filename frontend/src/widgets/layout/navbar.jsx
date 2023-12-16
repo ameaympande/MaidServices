@@ -61,9 +61,12 @@ export function Navbar({ brandName, routes }) {
 
   return (
     <MTNavbar color="transparent" className="p-3">
-      <div className="container mx-auto flex items-center justify-between text-white">
+      <div className="container mx-auto flex items-center justify-between text-white ">
         <Link to="/">
-          <Typography className="mr-4 ml-2 cursor-pointer py-1.5 font-bold">
+          <Typography
+            className="mr-4 ml-2 cursor-pointer py-1.5"
+            variant="lead"
+          >
             {brandName}
           </Typography>
         </Link>
@@ -93,7 +96,7 @@ export function Navbar({ brandName, routes }) {
 }
 
 Navbar.defaultProps = {
-  brandName: "Material Tailwind React",
+  brandName: "Total Home",
 };
 
 Navbar.propTypes = {

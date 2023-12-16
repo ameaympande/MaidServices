@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <ToastContainer
-        position="top-right"
-        autoClose={1000}
+        position="top-center"
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -18,7 +18,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
       />
       {!(pathname == "/sign-in" || pathname == "/sign-up") && (
         <div className="container absolute left-2/4 z-10 mx-auto -translate-x-2/4 p-4">
@@ -32,7 +32,6 @@ function App() {
         )}
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
-      <ToastContainer />
     </>
   );
 }

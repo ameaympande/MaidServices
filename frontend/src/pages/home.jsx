@@ -25,32 +25,30 @@ export function Home() {
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
               <Typography
-                variant="h1"
+                variant="h2"
                 color="white"
                 className="mb-6 font-black"
               >
-                Your story starts with us.
+                "Elite Home Maid: Your All-in-One Service Solution"
               </Typography>
               <Typography variant="lead" color="white" className="opacity-80">
-                This is a simple example of a Landing Page you can build using
-                Material Tailwind. It features multiple components based on the
-                Tailwind CSS and Material Design by Google.
+                "Experience the epitome of home care with Elite Home Maid. From
+                meticulous cleaning to personalized services, we cater to every
+                aspect of your home, ensuring a haven of comfort and
+                cleanliness."
               </Typography>
             </div>
           </div>
         </div>
       </div>
-      <section className="-mt-32 bg-white px-4 pb-20 pt-4">
+      <section className="-mt-32 bg-white px-4 pb-20 pt-4 bg-trasnparent">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map(({ color, title, icon, description }) => (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 ">
+            {featuresData.map(({ image, title, description }) => (
               <FeatureCard
                 key={title}
-                color={color}
+                image={image}
                 title={title}
-                icon={React.createElement(icon, {
-                  className: "w-5 h-5 text-white",
-                })}
                 description={description}
               />
             ))}
