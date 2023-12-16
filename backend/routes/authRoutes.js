@@ -39,43 +39,39 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  try {
-    const { email, password } = req.body;
+  const { name, email, password, location, gender, ph_number } = req.body;
 
-    if (!email || !password) {
-      const missingFields = [];
-      if (!email) missingFields.push("Email");
-      if (!password) missingFields.push("Password");
+  if (!name || !email || !password) {
+    return res
+      .status(400)
+      .json({ message: "Name, email, and password are required" });
+  }
 
-      return res.status(400).json({
-        message: `Missing required fields: ${missingFields.join(", ")}.`,
-      });
-    }
+  const duplicate = await User.findOne({ email }).lean().exec();
 
-    const isEmailVerify = isValidEmail(email);
-    if (!isEmailVerify) {
-      return res.status(400).json({ message: "Please enter a valid email." });
-    }
-
-    const existingUser = await User.findOne({ email });
-
-    if (existingUser) {
-      return res.status(400).json({ message: "User is already exist." });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const newUser = new User({
-      email,
-      password: hashedPassword,
+  if (duplicate) {
+    return res.status(409).json({
+      message: "Email already exists. Please log in or use another email.",
     });
+  }
 
-    await newUser.save();
+  const hashedPwd = await bcrypt.hash(password, 10);
 
-    return res.status(201).json({ message: "User registered successfully." });
-  } catch (err) {
-    console.log(err);
-    return res.status(500).json({ message: "Internal server error" });
+  const userObject = {
+    name,
+    email,
+    password: hashedPwd,
+    location,
+    gender,
+    ph_number,
+  };
+
+  const user = await User.create(userObject);
+
+  if (user) {
+    res.status(201).json({ message: `New user ${user.name} created` });
+  } else {
+    res.status(400).json({ message: "Invalid user data received" });
   }
 });
 
