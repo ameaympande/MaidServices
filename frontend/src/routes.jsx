@@ -7,8 +7,13 @@ export const routes = [
     element: <Home />,
   },
   {
-    name: "profile",
-    path: "/profile",
+    name: "Services",
+    path: "/services",
+    element: <Profile />,
+  },
+  {
+    name: "Pricing",
+    path: "/price",
     element: <Profile />,
   },
   {
@@ -17,15 +22,9 @@ export const routes = [
     element: <SignIn />,
   },
   {
-    name: "Sign Up",
-    path: "/sign-up",
-    element: <SignUp />,
-  },
-  {
-    name: "Docs",
-    href: "https://www.material-tailwind.com/docs/react/installation",
-    target: "_blank",
-    element: "",
+    name: "About Us",
+    path: "/about",
+    element: <Profile />,
   },
 ];
 

@@ -6,22 +6,17 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
-export function FeatureCard({ color, icon, title, description }) {
+export function FeatureCard({ image, title, description }) {
   return (
-    <Card className="rounded-lg shadow-lg shadow-gray-500/10">
+    <Card className="rounded-lg shadow-lg shadow-gray-500/10 bg-amber-200 transform hover:scale-105 transition-transform">
       <CardBody className="px-8 text-center">
-        <IconButton
-          variant="gradient"
-          size="lg"
-          color={color}
-          className="pointer-events-none mb-6 rounded-full"
-        >
-          {icon}
-        </IconButton>
-        <Typography variant="h5" className="mb-2" color="blue-gray">
+        <div>
+          <img src={image} alt={title} className="w-25 h-18 rounded-full" />
+        </div>
+        <Typography variant="h5" className="mt-4 mb-2" color="blue-gray">
           {title}
         </Typography>
-        <Typography className="font-normal text-blue-gray-600">
+        <Typography className="mt-2 font-normal text-blue-gray-600">
           {description}
         </Typography>
       </CardBody>

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const RegisterAPI = async (form) => {
-  const { name, email, password } = form;
+export const ContactAPI = async (form) => {
+  const { name, email, message } = form;
 
   const url = "http://localhost:3500/";
   //   const url = process.env.SERVER_URI;
@@ -11,12 +11,12 @@ export const RegisterAPI = async (form) => {
     const body = {
       name: name,
       email: email,
-      password: password,
+      message: message,
     };
 
-    const response = await axios.post(url + "auth/signup", body);
+    const response = await axios.post(url + "contact", body);
 
-    if (response && response.status === 201) {
+    if (response && response.status === 200) {
       toast.success(response.data.message);
       return response.data.message;
     } else {

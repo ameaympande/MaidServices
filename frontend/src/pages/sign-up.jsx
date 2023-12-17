@@ -2,10 +2,11 @@ import { RegisterAPI } from "@/api/RegisterAPI";
 import toastPromise from "@/helper/ToasterPromise";
 import { Input, Checkbox, Button, Typography } from "@material-tailwind/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export function SignUp() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -57,6 +58,9 @@ export function SignUp() {
       console.log("Registration successful!");
       const res = await RegisterAPI(form);
       console.log(res);
+      if (res) {
+        navigate("/sign-in");
+      }
     }
   };
 
