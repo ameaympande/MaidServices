@@ -4,8 +4,9 @@ import { toast } from "react-toastify";
 export const LoginAPI = async (form) => {
   const { email, password } = form;
 
-  const url = "http://localhost:3500/";
-  //   const url = process.env.SERVER_URI;
+  const url = "https://total-home.onrender.com/";
+  // const url = import.meta.env.SERVER_URI;
+  console.log(url);
 
   try {
     const body = {
