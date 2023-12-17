@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 export const ContactAPI = async (form) => {
   const { name, email, message } = form;
 
-  const url = "http://localhost:3500/";
-  //   const url = process.env.SERVER_URI;
+  const url = "https://total-home.onrender.com/";
+  // const url = process.env.SERVER_URI;
 
   try {
     const body = {
