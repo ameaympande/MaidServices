@@ -1,5 +1,4 @@
 import { LoginAPI } from "@/api/LoginAPI";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { Input, Checkbox, Button, Typography } from "@material-tailwind/react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
