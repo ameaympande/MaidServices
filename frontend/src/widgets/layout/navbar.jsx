@@ -7,7 +7,7 @@ import {
   Typography,
   IconButton,
 } from "@material-tailwind/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Menu, X } from "lucide-react";
 
 export function Navbar({ brandName, routes }) {
   const [openNav, setOpenNav] = React.useState(false);
@@ -79,9 +79,9 @@ export function Navbar({ brandName, routes }) {
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
-            <XMarkIcon strokeWidth={2} className="h-6 w-6" />
+            <X strokeWidth={2} className="h-6 w-6" />
           ) : (
-            <Bars3Icon strokeWidth={2} className="h-6 w-6" />
+            <Menu strokeWidth={2} className="h-6 w-6" />
           )}
         </IconButton>
       </div>

@@ -1,25 +1,21 @@
-import {
-  BriefcaseIcon,
-  ChartBarIcon,
-  PlayIcon,
-} from "@heroicons/react/24/solid";
+import { BarChart2, Briefcase, Play } from "lucide-react";
 
 export const contactData = [
   {
     title: "Excelent Services",
-    icon: BriefcaseIcon,
+    icon: Briefcase,
     description:
       "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     title: "Grow Your Market",
-    icon: ChartBarIcon,
+    icon: BarChart2,
     description:
       "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     title: "Launch Time",
-    icon: PlayIcon,
+    icon: Play,
     description:
       "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },

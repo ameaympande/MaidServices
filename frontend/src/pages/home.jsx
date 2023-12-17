@@ -68,7 +68,7 @@ export function Home() {
       </div>
       <section className="-mt-32 bg-white px-4 pb-20 pt-4 bg-transparent">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 ">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 hover:cursor-pointer">
             {featuresData.map(({ image, title, description }) => (
               <FeatureCard
                 key={title}
@@ -128,34 +128,6 @@ export function Home() {
           <PageTitle section="Contact Us" heading="Want some help?">
             Complete this form and we will get back to you in 24 hours.
           </PageTitle>
-          {/* <form className="mx-auto w-full mt-12 lg:w-5/12">
-            <div className="mb-8 flex gap-8">
-              <Input variant="outlined" size="lg" label="Full Name" />
-              <Input variant="outlined" size="lg" label="Email Address" />
-            </div>
-            <Textarea variant="outlined" size="lg" label="Message" rows={8} />
-            <Checkbox
-              label={
-                <Typography
-                  variant="small"
-                  color="gray"
-                  className="flex items-center font-normal"
-                >
-                  I agree the
-                  <a
-                    href="#"
-                    className="font-medium transition-colors hover:text-gray-900"
-                  >
-                    &nbsp;Terms and Conditions
-                  </a>
-                </Typography>
-              }
-              containerProps={{ className: "-ml-2.5" }}
-            />
-            <Button variant="gradient" size="lg" className="mt-8" fullWidth>
-              Send Message
-            </Button>
-          </form> */}
           <ContactUsForm />
         </div>
       </section>
