@@ -41,7 +41,7 @@ export function SimpleFooter({ brandName, brandLink, routes }) {
 }
 
 SimpleFooter.defaultProps = {
-  brandName: "Creative Tim",
+  brandName: "Total Home",
   brandLink: "https://www.creative-tim.com",
   routes: [
     { name: "Creative Tim", path: "https://www.creative-tim.com" },

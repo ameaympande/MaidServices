@@ -66,7 +66,7 @@ export function Home() {
           </div>
         </div>
       </div>
-      <section className="-mt-32 bg-white px-4 pb-20 pt-4 bg-transparent">
+      <section className="-mt-32 bg-white px-4 pb-20 pt-4 bg-[url('/img/bgsection.jpg')] bg-cover bg-center">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 hover:cursor-pointer">
             {featuresData.map(({ image, title, description }) => (
@@ -123,7 +123,7 @@ export function Home() {
           </div>
         </div>
       </section> */}
-      <section className="relative bg-white py-24 px-4">
+      <section className="-mt-2 relative bg-white py-24 px-4 bg-[url('/img/bgcontact.jpg')] bg-cover bg-center">
         <div className="container mx-auto">
           <PageTitle section="Contact Us" heading="Want some help?">
             Complete this form and we will get back to you in 24 hours.
@@ -131,7 +131,7 @@ export function Home() {
           <ContactUsForm />
         </div>
       </section>
-      <div className="bg-white">
+      <div className="bg-gray-300">
         <Footer />
       </div>
     </>
