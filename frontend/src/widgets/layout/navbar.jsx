@@ -63,12 +63,11 @@ export function Navbar({ brandName, routes }) {
     <MTNavbar color="transparent" className="p-3">
       <div className="container mx-auto flex items-center justify-between text-white ">
         <Link to="/">
-          <Typography
-            className="mr-4 ml-2 cursor-pointer py-1.5"
-            variant="lead"
-          >
-            {brandName}
-          </Typography>
+          <img
+            src="/img/Total_Home.png"
+            alt="Total Home Logo"
+            className="w-12 h-12 object-contain"
+          />
         </Link>
         <div className="hidden lg:block">{navList}</div>
         <IconButton

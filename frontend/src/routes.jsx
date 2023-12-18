@@ -2,8 +2,7 @@ import { Home, Profile, SignIn, SignUp } from "@/pages";
 
 export const routes = [
   {
-    name: "home",
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   {
@@ -22,14 +21,13 @@ export const routes = [
     element: <SignIn />,
   },
   {
-    name: "Sign Up",
-    path: "/Sign-up",
-    element: <SignUp />,
-  },
-  {
     name: "About Us",
     path: "/about",
     element: <Profile />,
+  },
+  {
+    path: "/Sign-up",
+    element: <SignUp />,
   },
 ];
 
