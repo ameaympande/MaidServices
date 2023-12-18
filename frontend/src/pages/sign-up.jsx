@@ -65,28 +65,31 @@ export function SignUp() {
   };
 
   return (
-    <section className="m-8 flex">
-      <div className="w-2/5 h-50 hidden lg:block">
+    <section className="m-4 md:m-8 flex flex-col md:flex-row gap-4">
+      <div className="w-2/5 h-full hidden lg:block">
         <img
           src="/img/pattern.png"
           className="h-full w-full object-cover rounded-3xl"
         />
       </div>
-      <div className="w-full lg:w-3/5 flex flex-col items-center justify-center">
+      <div className="w-full md:w-3/5 flex flex-col items-center justify-center">
         <div className="text-center">
-          <Typography variant="h2" className="font-bold mb-4">
+          <Typography
+            variant="h2"
+            className="font-bold mb-4 text-2xl md:text-4xl"
+          >
             Join Us Today
           </Typography>
           <Typography
             variant="paragraph"
             color="blue-gray"
-            className="text-lg font-normal"
+            className="text-lg md:text-base font-normal"
           >
             Enter your email and password to register.
           </Typography>
         </div>
-        <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
-          <div className="mb-1 flex flex-col gap-6">
+        <form className="mt-6 mx-auto w-80 max-w-screen-lg lg:w-1/2 ">
+          <div className="mb-1 flex flex-col gap-6 w-[18rem]">
             <Typography
               variant="small"
               color="blue-gray"
