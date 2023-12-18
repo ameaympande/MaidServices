@@ -79,8 +79,8 @@ const ContactUsForm = () => {
   };
 
   return (
-    <form className="mx-auto w-full mt-12 lg:w-5/12">
-      <div className="mb-8 flex gap-8">
+    <form className="mx-auto w-full mt-12 md:w-10/12 lg:w-8/12">
+      <div className="mb-6 md:mb-8 md:mt-0 flex flex-col md:flex-row md:gap-5">
         <Input
           variant="outlined"
           size="lg"
@@ -100,6 +100,7 @@ const ContactUsForm = () => {
           error={error.email}
         />
       </div>
+
       <Textarea
         variant="outlined"
         size="lg"
@@ -113,7 +114,7 @@ const ContactUsForm = () => {
       <Button
         variant="gradient"
         size="lg"
-        className="mt-8"
+        className="mt-6 md:mt-8"
         fullWidth
         onClick={handleSubmit}
         disabled={loading}
