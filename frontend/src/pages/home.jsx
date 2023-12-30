@@ -16,29 +16,25 @@ import { featuresData, teamData, contactData } from "@/data";
 import CustomCard from "@/widgets/cards/CustomCard";
 import ContactUsForm from "@/components/ContactUs";
 
-const APP_URI = "https://total-home.onrender.com";
-
-console.log(APP_URI);
-
 export function Home() {
   const cardData = [
     {
-      imageSrc: `${APP_URI}/img/cookingMaid.jpg`,
+      imageSrc: "/img/cookingMaid.jpg",
       title: "Cooks",
       rating: 4,
     },
     {
-      imageSrc: `${APP_URI}/img/cleaningMaid.jpg`,
+      imageSrc: "/img/cleaningMaid.jpg",
       title: "Clean",
       rating: 5,
     },
     {
-      imageSrc: `${APP_URI}/img/allrounderMaid.png`,
+      imageSrc: "/img/allrounderMaid.png",
       title: "All rounders",
       rating: 4.5,
     },
     {
-      imageSrc: `${APP_URI}/img/babysitMaid.jpg`,
+      imageSrc: "/img/babysitMaid.jpg",
       title: "Babysitter / Japa",
       rating: 4.5,
     },
@@ -46,9 +42,7 @@ export function Home() {
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div
-          className={`absolute top-0 h-full w-full bg-[url('${APP_URI}/img/bgHome.jpg')] bg-cover bg-center`}
-        />
+        <div className="absolute top-0 h-full w-full bg-[url('/img/bgHome.jpg')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
@@ -74,9 +68,7 @@ export function Home() {
           </div>
         </div>
       </div>
-      <section
-        className={`-mt-32 bg-white px-4 pb-20 pt-4 bg-[url('${APP_URI}/img/bgsection.jpg')] bg-cover bg-center`}
-      >
+      <section className="-mt-32 bg-white px-4 pb-20 pt-4 bg-[url('/img/bgsection.jpg')] bg-cover bg-center">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 hover:cursor-pointer">
             {featuresData.map(({ image, title, description }) => (
@@ -142,9 +134,7 @@ export function Home() {
             </div>
           </div>
         </section> */}
-      <section
-        className={`-mt-2 relative bg-white py-24 px-4 bg-[url('${APP_URI}/img/bgcontact.jpg')] bg-cover bg-center`}
-      >
+      <section className="-mt-2 relative bg-white py-24 px-4 bg-[url('/img/bgcontact.jpg')] bg-cover bg-center">
         <div className="container mx-auto">
           <PageTitle
             section="Contact Us"
