@@ -50,7 +50,7 @@ Footer.defaultProps = {
     {
       color: "gray",
       name: "instagram",
-      path: "https://www.instagram.com/creativetimofficial/",
+      path: "https://www.instagram.com/ameyoryx/",
     },
     {
       color: "black",

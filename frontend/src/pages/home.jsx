@@ -1,18 +1,8 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Typography,
-  Button,
-  IconButton,
-  Input,
-  Textarea,
-  Checkbox,
-} from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import { PageTitle, Footer } from "@/widgets/layout";
-import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { featuresData, teamData, contactData } from "@/data";
+import { FeatureCard } from "@/widgets/cards";
+import { featuresData } from "@/data";
 import CustomCard from "@/widgets/cards/CustomCard";
 import ContactUsForm from "@/components/ContactUs";
 

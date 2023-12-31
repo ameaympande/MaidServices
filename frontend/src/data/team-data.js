@@ -24,10 +24,6 @@ export const teamData = [
     position: "Marketing Specialist",
     socials: [
       {
-        color: "light-blue",
-        name: "twitter",
-      },
-      {
         color: "blue",
         name: "linkedin",
       },

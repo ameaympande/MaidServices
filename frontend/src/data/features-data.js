@@ -28,10 +28,9 @@ export const featuresData = [
   },
   {
     image: allround,
-    title: "All-Rounders",
+    title: "All-Rounder",
     icon: MessageCircle,
-    description:
-      "Experienced babysitters and japa for all your child-care needs!",
+    description: "Experienced All round work to your lovely home!",
   },
 ];
 
